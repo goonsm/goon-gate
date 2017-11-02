@@ -8,6 +8,7 @@ import TransitionGroup from 'react-transition-group/TransitionGroup';
 
 import AnimatedSwitch from 'components/AnimatedSwitch';
 import Home from 'pages/Home';
+import Upload from 'pages/Upload';
 
 import {
 	Router,
@@ -23,6 +24,7 @@ const App = () => (
 		<TransitionGroup>
 			<AnimatedSwitch>
 				<Route exact path="/" component={Home}/>
+				<Route exact path="/upload" component={Upload}/>
 			</AnimatedSwitch>
 		</TransitionGroup>
 	</Router>

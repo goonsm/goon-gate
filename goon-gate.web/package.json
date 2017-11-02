@@ -13,6 +13,7 @@
   },
   "scripts": {
     "start": "npm run build-css && run-p -ncr watch-css start-js",
+    "lint": "eslint src/*.js && eslint __test__/*.js",
     "start-js": "react-scripts start",
     "build": "run-s -n build-css build-js",
     "build-js": "react-scripts build",

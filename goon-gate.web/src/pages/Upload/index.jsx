@@ -3,11 +3,12 @@ import React, { Component } from 'react';
 //import Sections
 import Footer from 'sections/Footer';
 
-export default class Home extends Component {
+export default class Upload extends Component {
   render() {
-    // TODO: @louisgv implement basic Home from Figma design mock.
+    // TODO: @coldsauce implement upload here from Figma Design mockup.
     return (
       <div className="Home">
+          <p> you can upload here amazing </p>
         <Footer />
       </div>
     );
