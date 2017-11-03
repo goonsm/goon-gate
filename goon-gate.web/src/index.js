@@ -12,23 +12,23 @@ import Home from 'pages/Home';
 import Upload from 'pages/Upload';
 
 import {
-	Router,
-	Route
+  Router,
+  Route,
 } from 'react-router-dom';
 
 import {
-	customHistory,
+  customHistory,
 } from 'api';
 
 const App = () => (
-	<Router history={customHistory} basename="/">
-		<TransitionGroup>
-			<AnimatedSwitch>
-				<Route exact path="/" component={Home}/>
-				<Route exact path="/upload" component={Upload}/>
-			</AnimatedSwitch>
-		</TransitionGroup>
-	</Router>
+  <Router history={customHistory} basename="/">
+    <TransitionGroup>
+      <AnimatedSwitch>
+        <Route exact path="/" component={Home} />
+        <Route exact path="/upload" component={Upload} />
+      </AnimatedSwitch>
+    </TransitionGroup>
+  </Router>
 );
 
 export default App;
@@ -36,8 +36,8 @@ export default App;
 window.ipfs = IPFS('localhost', '5001', { protocol: 'http' });
 const rootEl = document.getElementById('root');
 
+
 if (rootEl) {
-	ReactDOM.render(
-		<App/>, rootEl);
-		registerServiceWorker();
+  ReactDOM.render(<App />, rootEl);
+  registerServiceWorker();
 }
