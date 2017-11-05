@@ -6,13 +6,13 @@ import Footer from 'sections/Footer';
 import './index.css';
 
 export default class Upload extends Component {
-  render() {
-    return (
-      <div className="Diffy">
-        <Header/>
-        <ImageUploader/>
-        <Footer/>
-      </div>
-    );
-  }
+	render() {
+		return (
+			<div className="Diffy">
+				<Header/>
+				<ImageUploader/>
+				<Footer/>
+			</div>
+		);
+	}
 }

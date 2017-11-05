@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "eslint-config-react-app": "^2.0.1",
     "ipfs": "^0.26.0",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
@@ -16,8 +17,8 @@
   },
   "scripts": {
     "start": "npm run build-css && run-p -ncr watch-css start-js",
-    "lint": "eslint src/",
-    "lint:fix": "eslint --fix src/",
+    "lint": "eslint src/**/*.jsx && eslint test/**/*.jsx",
+    "lint:fix": "eslint --fix src/**/*.jsx && eslint --fix test/**/",
     "start-js": "react-scripts start",
     "build": "run-s -n build-css build-js",
     "build-js": "react-scripts build",
