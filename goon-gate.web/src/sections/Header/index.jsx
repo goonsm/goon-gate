@@ -12,7 +12,6 @@ const StyledHeader = styled.header`
 `
 
 const StyledNav = styled.nav`
-	/* This renders the buttons above... Edit me! */
 	display: flex;
 
 `
@@ -31,7 +30,14 @@ const StyledLink = styled(Link)`
 	border: 2px solid palevioletred;
 	border-radius: 3px;
 	text-decoration: none;
+
 	&:hover {
+		background: palevioletred;
+		color: white;
+		opacity: 0.9;
+	}
+
+	&.active {
 		background: palevioletred;
 		color: white;
 	}
@@ -42,8 +48,8 @@ export default class Header extends React.Component {
 		return(
 			<StyledHeader>
 				<StyledNav>
-					<StyledLink to='/'>Home</StyledLink>
-					<StyledLink to='/diffy'>Diffy</StyledLink>
+					<StyledLink activeClassName="active" to='/'>Home</StyledLink>
+					<StyledLink activeClassName="active" to='/diffy'>Diffy</StyledLink>
 				</StyledNav>
 			</StyledHeader>
 		)

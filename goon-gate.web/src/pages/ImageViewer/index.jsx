@@ -1,16 +1,17 @@
 import React, { Component } from 'react';
 
 import Header from 'sections/Header';
-import ImageUploader from 'sections/ImageUploader';
 import Footer from 'sections/Footer';
+import IPFSImageWrapper from 'sections/IPFSImageWrapper';
+
 import './index.css';
 
-export default class Upload extends Component {
+export default class ImageViewer extends Component {
   render() {
     return (
-      <div className="Diffy">
+      <div className="ImageViewer">
         <Header/>
-        <ImageUploader/>
+        <IPFSImageWrapper/>
         <Footer/>
       </div>
     );

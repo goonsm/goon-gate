@@ -10,6 +10,7 @@ import AnimatedSwitch from 'components/AnimatedSwitch';
 
 import Home from 'pages/Home';
 import Diffy from 'pages/Diffy';
+import ImageViewer from 'pages/ImageViewer';
 
 import {
   Router,
@@ -26,6 +27,7 @@ const App = () => (
       <AnimatedSwitch>
         <Route exact path="/" component={Home} />
         <Route exact path="/diffy" component={Diffy} />
+        <Route path="/image/*" component={ImageViewer} />
       </AnimatedSwitch>
     </TransitionGroup>
   </Router>

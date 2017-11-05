@@ -1,0 +1,29 @@
+.uploadImage {
+  margin-top: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.uploadImage input {
+  padding-left: 90px;
+}
+
+.ipfsFileData {
+  margin-top: 30px;
+}
+
+.ipfsFileData * {
+  margin: auto;
+  margin-top: 10px;
+  display: block;
+  text-align: center;
+}
+
+.ipfsFileData svg {
+  margin-top: 40px;
+}
+
+input {
+  text-align: center;
+  margin: auto;
+}

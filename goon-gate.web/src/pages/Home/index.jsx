@@ -5,6 +5,8 @@ import React, {
 import Header from 'sections/Header';
 import Footer from 'sections/Footer';
 
+import './index.css';
+
 export default class Home extends Component {
 
 	render() {

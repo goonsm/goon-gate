@@ -3,6 +3,8 @@ import React, {
 } from 'react';
 
 import InputSubmit from 'react-input-submit';
+import './index.css';
+import { QRCode } from 'react-qr-svg';
 
 import {
 	readFile,
@@ -12,6 +14,8 @@ import {
 import {
 	ipfsNode
 } from 'api';
+
+const {location} = window;
 
 export default class ImageUploader extends Component {
 
@@ -53,36 +57,35 @@ export default class ImageUploader extends Component {
 	render() {
 		return(
 			<div className="ImageUploader">
-				<form>
-					<input type="file" name="photo" id="photo"
-						onChange={({target}) => {
-							this.uploadToIPFS(target.files[0])}
-						}/>
-						<button onClick={(event) => event.preventDefault()}>
-							Upload Image
-						</button>
-					</form>
-
-					<h2>
-						LOCAL IMAGE:
-					</h2>
-
-					<img style={{width: '30%'}} src={this.state.imageData} alt="Local"/>
-					{this.state.returnedFromWrite &&
-						<div>
-							Yay it did something. Put notification here.
-							{JSON.stringify(this.state.returnedFromWrite)}
-						</div>
-					}
-
-					<InputSubmit placeholder="IPFS HASH" onSubmit={ this.getFromIPFS }/>
-					<h2>
-						REMOTE IMAGE:
-					</h2>
-					{this.state.readData &&
-						<img style={{width: '30%'}} src={this.state.readData} alt="Remote"/>
-					}
-				</div>
+        <div className="uploadImage">
+            <form>
+              <input type="file" name="photo" id="photo"
+                onChange={({target}) => {
+                  this.uploadToIPFS(target.files[0])}
+                }/>
+            </form>
+          </div>
+          <div className="ipfsFileData">
+            {this.state.returnedFromWrite &&
+              <div>
+                <span className="path">
+                  path: {this.state.returnedFromWrite[0].path}
+                </span>
+                <span className="hash">
+                  hash: {this.state.returnedFromWrite[0].hash}
+                </span>
+              <QRCode
+                    bgColor="#FFFFFF"
+                    fgColor="#000000"
+                    level="Q"
+                    style={{ width: 256 }}
+                    value={location.href + "/" + this.state.returnedFromWrite[0].hash}
+              />
+              </div>
+            }
+            
+        </div>
+      </div>
 			);
 		}
 	}

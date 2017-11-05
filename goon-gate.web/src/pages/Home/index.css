@@ -1,0 +1,13 @@
+body {
+  height: 100vh;
+}
+
+.Home {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.Footer {
+  margin-top: auto;
+}
