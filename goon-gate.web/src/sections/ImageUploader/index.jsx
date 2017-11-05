@@ -57,35 +57,35 @@ export default class ImageUploader extends Component {
 	render() {
 		return(
 			<div className="ImageUploader">
-				<div className="uploadImage">
-					<form>
-						<input type="file" name="photo" id="photo"
-							onChange={({target}) => {
-								this.uploadToIPFS(target.files[0])}
-							}/>
-					</form>
-				</div>
-				<div className="ipfsFileData">
-					{this.state.returnedFromWrite &&
+        <div className="uploadImage">
+            <form>
+              <input type="file" name="photo" id="photo"
+                onChange={({target}) => {
+                  this.uploadToIPFS(target.files[0])}
+                }/>
+            </form>
+          </div>
+          <div className="ipfsFileData">
+            {this.state.returnedFromWrite &&
               <div>
-              	<span className="path">
+                <span className="path">
                   path: {this.state.returnedFromWrite[0].path}
-              	</span>
-              	<span className="hash">
+                </span>
+                <span className="hash">
                   hash: {this.state.returnedFromWrite[0].hash}
-              	</span>
-              	<QRCode
-              		bgColor="#FFFFFF"
-              		fgColor="#000000"
-              		level="Q"
-              		style={{ width: 256 }}
-              		value={location.href + "/" + this.state.returnedFromWrite[0].hash}
-              	/>
+                </span>
+              <QRCode
+                    bgColor="#FFFFFF"
+                    fgColor="#000000"
+                    level="Q"
+                    style={{ width: 256 }}
+                    value={location.href + "/" + this.state.returnedFromWrite[0].hash}
+              />
               </div>
-					}
+            }
             
-				</div>
-			</div>
-		);
-	}
+        </div>
+      </div>
+			);
+  }
 }
