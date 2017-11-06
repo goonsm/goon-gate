@@ -27,3 +27,21 @@ input {
   text-align: center;
   margin: auto;
 }
+
+.dropText {
+  padding: 20px;
+}
+
+.dropZone {
+  background-color: #ecf0f1;
+  padding: 100px;
+}
+
+.dropZoneActive {
+  background-color: #bdc3c7;
+  padding: 100px;
+}
+
+.hashLink {
+  font-size: 1.5em;
+}
