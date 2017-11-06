@@ -27,7 +27,7 @@ const App = () => (
 			<AnimatedSwitch>
 				<Route exact path="/" component={Home} />
 				<Route exact path="/diffy" component={Diffy} />
-				<Route path="/image/*" component={ImageViewer} />
+				<Route path="/diffy/image/*" component={ImageViewer} />
 			</AnimatedSwitch>
 		</TransitionGroup>
 	</Router>
