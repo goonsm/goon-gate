@@ -2,7 +2,7 @@
   "name": "goon-gate.web",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://goonism.github.io/goon-gate/goon-gate.web",
+  "homepage": "https://goonism.github.io/goon-gate",
   "dependencies": {
     "ipfs": "^0.26.0",
     "react": "^16.0.0",

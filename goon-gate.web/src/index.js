@@ -22,7 +22,7 @@ import {
 } from 'api';
 
 const App = () => (
-	<Router history={customHistory} basename="/">
+	<Router history={customHistory} basename="/goon-gate">
 		<TransitionGroup>
 			<AnimatedSwitch>
 				<Route exact path="/" component={Home} />
