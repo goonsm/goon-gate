@@ -31,10 +31,12 @@
   },
   "lint-staged": {
     "gitDir": "../",
-    "*.{js,jsx}": [
-      "eslint --fix",
-      "git add"
-    ]
+		"linters": {
+	    "*.{js,jsx}": [
+	      "eslint --fix",
+	      "git add"
+	    ]
+		}
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
