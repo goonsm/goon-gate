@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 import styled from "styled-components";
 
@@ -15,7 +15,7 @@ const StyledNav = styled.nav`
   display: flex;
 `;
 
-const StyledLink = styled(Link)`
+const StyledLink = styled(NavLink)`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -47,10 +47,10 @@ export default class Header extends React.Component {
 		return (
 			<StyledHeader>
 				<StyledNav>
-					<StyledLink activeClassName="active" to="/">
+					<StyledLink exact to="/" activeClassName="active">
             Home
 					</StyledLink>
-					<StyledLink activeClassName="active" to="/diffy">
+					<StyledLink exact to="/diffy" activeClassName="active">
             Diffy
 					</StyledLink>
 				</StyledNav>
