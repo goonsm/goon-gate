@@ -1,8 +1,4 @@
-import createBrowserHistory from "history/createBrowserHistory";
-
 const IPFS = window.Ipfs;
-
-export const customHistory = createBrowserHistory();
 
 export const repo = "diffy-13234234"
 
