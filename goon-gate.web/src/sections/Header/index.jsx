@@ -50,7 +50,7 @@ export default class Header extends React.Component {
 					<StyledLink activeClassName="active" to="/">
             Home
 					</StyledLink>
-					<StyledLink activeClassName="active" to="/diffy">
+					<StyledLink activeClassName="active" to="/#/diffy">
             Diffy
 					</StyledLink>
 				</StyledNav>

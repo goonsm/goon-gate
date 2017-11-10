@@ -23,8 +23,8 @@ const App = () => (
 		<TransitionGroup>
 			<AnimatedSwitch>
 				<Route exact path="/" component={Home} />
-				<Route exact path="/diffy" component={Diffy} />
-				<Route path="/diffy/image/*" component={ImageViewer} />
+				<Route exact path="/#/diffy" component={Diffy} />
+				<Route path="/#/diffy/image/*" component={ImageViewer} />
 			</AnimatedSwitch>
 		</TransitionGroup>
 	</Router>
