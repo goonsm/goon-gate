@@ -79,7 +79,7 @@ export default class ImageUploader extends Component {
   					onDrop={this.onDrop}
   				>
   					<div className="dropText">
-              			Drop images you would like to share, here.
+  						Drop images you would like to share, here.
   					</div>
   				</Dropzone>
   			</div>

@@ -3,9 +3,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 50px;
 }
 
 img {
   width: 1000px;
   height: auto;
 }
+

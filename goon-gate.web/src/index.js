@@ -25,15 +25,17 @@ import './index.css';
 // Global page, so it also include some section
 const App = () => (
 	<Router basename="/goon-gate">
-		<Header />
-		<TransitionGroup>
-			<AnimatedSwitch>
-				<Route exact path="/" component={Home} />
-				<Route exact path="/diffy" component={Diffy} />
-				<Route path="/diffy/image/*" component={ImageViewer} />
-			</AnimatedSwitch>
-		</TransitionGroup>
-		<Footer />
+		<div>
+			<Header />
+			<TransitionGroup>
+				<AnimatedSwitch>
+					<Route exact path="/" component={Home} />
+					<Route exact path="/diffy" component={Diffy} />
+					<Route path="/diffy/image/*" component={ImageViewer} />
+				</AnimatedSwitch>
+			</TransitionGroup>
+			<Footer />
+		</div>
 	</Router>
 );
 

@@ -37,6 +37,10 @@ input {
   padding: 100px;
 }
 
+.dropZone:hover {
+  cursor: pointer;
+}
+
 .dropZoneActive {
   background-color: #bdc3c7;
   padding: 100px;
@@ -44,6 +48,7 @@ input {
 
 .hashLink {
   font-size: 1.5em;
+  width: 500px;
 }
 
 .upload {
@@ -51,4 +56,24 @@ input {
   margin: auto;
   margin-top: 30px;
   margin-bottom: 30px;
+}
+
+html, body, #root, .Diffy {
+  height: 100%;
+}
+
+#root > div {
+  height: 100%;
+}
+
+#root > div > div {
+  height: 100%;
+}
+
+.ImageUploader {
+  height: 100%;
+}
+
+.dropText > a {
+  all: unset;
 }
