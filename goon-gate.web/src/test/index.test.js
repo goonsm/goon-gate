@@ -6,12 +6,9 @@ import {
 
 import App from '../';
 
-class ClassSTUB {}
-
 it('renders without crashing', () => {
 	// Adding ipfs to the app:
+	const instance = shallow(<App/>);
 
-	global.Ipfs = ClassSTUB
-
-	shallow(<App/>);
+	expect(instance).toBeDefined()
 });
