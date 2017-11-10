@@ -35,6 +35,21 @@ export default class ImageUploader extends Component {
   	});
   };
 
+  getNormalizedHref(href) {
+  	if (href.endsWith('/')) {
+  		return href.slice(0, -1);
+  	} else {
+  		return href;
+  	}
+  }
+
+  getImageURL() {
+	  const imagePath = "image";
+	  const currentURL = this.getNormalizedHref(location.href);
+	  const imageHash = this.state.returnedFromWrite[0].hash;
+	  return `${currentURL}/${imagePath}/${imageHash}`;
+  }
+
   getFromIPFS = async hash => {
   	if (!ipfsNode.isOnline()) return;
 
@@ -64,7 +79,7 @@ export default class ImageUploader extends Component {
   					onDrop={this.onDrop}
   				>
   					<div className="dropText">
-              Drop images you would like to share, here.
+              			Drop images you would like to share, here.
   					</div>
   				</Dropzone>
   			</div>
@@ -77,30 +92,16 @@ export default class ImageUploader extends Component {
   								className="hashLink"
   								onClick={event => event.target.select()}
   								type="text"
-  								value={
-  									location.href +
-                    "/image/" +
-                    this.state.returnedFromWrite[0].hash
-  								}
+  								value={this.getImageURL()}
   							/>
   						</span>
-  						<a
-  							href={
-  								location.href +
-                  "/image/" +
-                  this.state.returnedFromWrite[0].hash
-  							}
-  						>
+  						<a href={this.getImageURL()}>
   							<QRCode
   								bgColor="#FFFFFF"
   								fgColor="#000000"
   								level="Q"
   								style={{ width: 256 }}
-  								value={
-  									location.href +
-                    "/image/" +
-                    this.state.returnedFromWrite[0].hash
-  								}
+  								value={this.getImageURL()}
   							/>
   						</a>
   					</div>
