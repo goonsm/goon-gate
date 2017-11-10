@@ -1,5 +1,6 @@
 import createBrowserHistory from "history/createBrowserHistory";
-import IPFS from "ipfs";
+
+const IPFS = window.Ipfs;
 
 export const customHistory = createBrowserHistory();
 

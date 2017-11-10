@@ -4,7 +4,6 @@
   "private": true,
   "homepage": "https://goonism.github.io/goon-gate",
   "dependencies": {
-    "ipfs": "^0.26.0",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
     "react-dom-animated": "^1.0.3",
@@ -28,8 +27,8 @@
     "watch-css": "node-less-chokidar src --watch",
     "eject": "react-scripts eject",
     "precommit": "lint-staged",
-		"deploy": "gh-pages -d build",
-		"publish": "npm run build; npm run deploy;"
+    "deploy": "gh-pages -d build",
+    "publish": "npm run build; npm run deploy;"
   },
   "lint-staged": {
     "gitDir": "../",
