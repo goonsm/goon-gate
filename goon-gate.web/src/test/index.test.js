@@ -1,8 +1,17 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+
+import {
+	shallow
+} from 'enzyme';
+
 import App from '../';
 
+class ClassSTUB {}
+
 it('renders without crashing', () => {
-	const div = document.createElement('div');
-	ReactDOM.render(<App />, div);
+	// Adding ipfs to the app:
+
+	global.Ipfs = ClassSTUB
+
+	shallow(<App/>);
 });

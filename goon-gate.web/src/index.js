@@ -16,10 +16,16 @@ import Home from 'pages/Home';
 import Diffy from 'pages/Diffy';
 import ImageViewer from 'pages/ImageViewer';
 
+// Global sections:
+import Header from "sections/Header";
+import Footer from "sections/Footer";
+
 import './index.css';
 
+// Global page, so it also include some section
 const App = () => (
 	<Router basename="/goon-gate">
+		<Header />
 		<TransitionGroup>
 			<AnimatedSwitch>
 				<Route exact path="/" component={Home} />
@@ -27,6 +33,7 @@ const App = () => (
 				<Route path="/diffy/image/*" component={ImageViewer} />
 			</AnimatedSwitch>
 		</TransitionGroup>
+		<Footer />
 	</Router>
 );
 
