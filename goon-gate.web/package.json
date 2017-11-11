@@ -4,6 +4,7 @@
   "private": true,
   "homepage": "https://goonism.github.io/goon-gate",
   "dependencies": {
+    "gitchat": "^1.0.0",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
     "react-dom-animated": "^1.0.3",

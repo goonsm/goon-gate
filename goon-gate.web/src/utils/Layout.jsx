@@ -1,5 +1,10 @@
 import styled from 'styled-components';
 
+export const FlexRowDiv = styled.div`
+  display: flex;
+  flex-direction: row;
+`;
+
 export const FlexColumnSection = styled.section`
   display: flex;
   flex-direction: column;
@@ -19,4 +24,11 @@ export const NoScrollPage = styled(FlexColumnSection)`
 
 export const LongPage = styled(FlexColumnSection)`
   height: auto;
+`;
+
+export const FullHeightColumnFlexSpaceBetweenDiv = styled.div`
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 `;
