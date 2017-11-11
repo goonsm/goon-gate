@@ -1,12 +1,21 @@
 language: node_js
 node_js:
-  - 6
+- 6
 cache:
   directories:
-    - node_modules
+  - node_modules
 script:
-  - pushd goon-gate.web
-  - npm install
-  - npm run build
-  - npm test
-  - popd
+- pushd goon-gate.web
+- npm install
+- npm run build
+- npm test
+- popd
+
+deploy:
+  provider: npm
+  email: stefan@stefanaleksic.com
+  api_key:
+    secure: qtqsTX23CEB54NX1HIG0xxiql6c9Bgk/RNsDhTTZQbyYd9JQpEzgiIIh0Obb40w1NsM++uM5Vq9vz8ICBEAjE8W5pbgCqzPZko842Uoct+VkU0VaBPOaIW0+rIk8LbIFnRZ9o9X0mRGg55z2FdHZ9iR5hG1D25dKIk2TEw40rq+80mfb/SncSYB4zs12Wr6+K9bkyP9geIMlaA3/hJHue2Nd+/9LPqulMzg4mQNOsJxuVQTqjl7kwyiR2YqayhJQS7JODILEHAUlYIUInko1Dvcpfj427lC59uHTJujfZSPFT/EL9BXyKeBKEvaoUqwvHhqhLQACgGjNOZdJYPHJpvwXKYH1eqjU9z3/lfCkkWPGOVcCZTsbPp6DUv5zeoharqTD3TQ+f8qSsdXtfpihaIS8eqwpWXYmLzxK66jNgxB61Q8uS0NXYYf8nanoBC1vWqdJtOn3dgF3Rtcg6GpTvU//bUvXLrY33qKSIy0fsT5myH1r7YUkeQJaj+eRrsdGg//A0aGr/8fcZKmV0vfE/L8BOkz2D1iBKL/jDGiPzpyAqSOtiiU3SOcLpobTaa4v16uj9/xCY2naZ64/QTS+bkEgeRV66fsFz9s+yKgw/QbHVKXpZsUANblDm+QWBJTlDlD6CePMSepKQIyzjN2SxAL2ZVF/QBHuofs1ETSC1Y8=
+  on:
+    tags: true
+    repo: goonism/goon-gate
