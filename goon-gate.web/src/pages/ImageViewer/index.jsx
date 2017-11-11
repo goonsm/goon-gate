@@ -1,4 +1,4 @@
-import React, { PureComponent } from "react";
+import React, {PureComponent} from "react";
 import styled from 'styled-components';
 
 import IPFSImageWrapper from "sections/IPFSImageWrapper";
@@ -13,7 +13,7 @@ export default class ImageViewer extends PureComponent {
 	render() {
 		return (
 			<Container>
-				  <IPFSImageWrapper />
+				<IPFSImageWrapper/>
 			</Container>
 		);
 	}
