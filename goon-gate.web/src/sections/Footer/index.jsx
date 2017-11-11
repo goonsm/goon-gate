@@ -1,13 +1,25 @@
-import React from "react";
+import React, {PureComponent} from "react";
 
-import "./index.css";
+import styled from 'styled-components';
 
-export default class Footer extends React.Component {
+import {FooterContainer} from 'utils/Layout';
+
+const StyledFooter = styled(FooterContainer)`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #201e1f;
+  color: white;
+  font-size: 1em;
+  text-align: center;
+`;
+
+export default class Footer extends PureComponent {
 	render() {
 		return (
-			<footer className="Footer" id="Copyright">
+			<StyledFooter id="Copyright">
         This work is licensed under a GOON LICENSE
-			</footer>
+			</StyledFooter>
 		);
 	}
 }

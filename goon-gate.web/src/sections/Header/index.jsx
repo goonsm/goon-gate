@@ -4,10 +4,11 @@ import { NavLink } from "react-router-dom";
 
 import styled from "styled-components";
 
-const StyledHeader = styled.header`
+import {HeaderContainer} from 'utils/Layout';
+
+const StyledHeader = styled(HeaderContainer)`
   display: fixed;
   top: 0;
-  height: 10vh;
   width: 100vw;
 `;
 
@@ -43,6 +44,7 @@ const StyledLink = styled(NavLink)`
 `;
 
 export default class Header extends React.Component {
+
 	render() {
 		return (
 			<StyledHeader>
@@ -50,9 +52,11 @@ export default class Header extends React.Component {
 					<StyledLink exact to="/" activeClassName="active">
             Home
 					</StyledLink>
-					<StyledLink exact to="/diffy" activeClassName="active">
-            Diffy
-					</StyledLink>
+					{this.props.routes.map(({name, path}, i) =>
+  					<StyledLink exact to={path} activeClassName="active" key={i}>
+							{name}
+  					</StyledLink>
+					)}
 				</StyledNav>
 			</StyledHeader>
 		);

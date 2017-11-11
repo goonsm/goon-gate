@@ -1,13 +1,20 @@
-import React, { Component } from "react";
+import React, { PureComponent } from "react";
 
-import "./index.css";
+import styled from 'styled-components';
 
-export default class Home extends Component {
+import {NoScrollPage} from 'utils/Layout';
+
+const Container = styled(NoScrollPage)`
+  justify-content: center;
+  align-items: center;
+`
+
+export default class Home extends PureComponent {
 	render() {
 		return (
-			<div className="Home">
+			<Container>
 				Welcome to GoonGate. Look around!
-			</div>
+			</Container>
 		);
 	}
 }

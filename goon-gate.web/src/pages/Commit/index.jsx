@@ -1,7 +1,7 @@
-import React, { PureComponent } from "react";
+import React, { Component } from 'react';
 import styled from 'styled-components';
 
-import ImageUploader from "sections/ImageUploader";
+import Messenger from 'sections/Messenger';
 
 import {NoScrollPage} from 'utils/Layout';
 
@@ -9,11 +9,11 @@ const Container = styled(NoScrollPage)`
 
 `
 
-export default class Upload extends PureComponent {
+export default class Commit extends Component {
 	render() {
 		return (
 			<Container>
-				<ImageUploader />
+				<Messenger/>
 			</Container>
 		);
 	}

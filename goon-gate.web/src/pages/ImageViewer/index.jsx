@@ -1,15 +1,20 @@
-import React, { Component } from "react";
+import React, { PureComponent } from "react";
+import styled from 'styled-components';
 
 import IPFSImageWrapper from "sections/IPFSImageWrapper";
 
-import "./index.css";
+import {NoScrollPage} from 'utils/Layout';
 
-export default class ImageViewer extends Component {
+const Container = styled(NoScrollPage)`
+
+`
+
+export default class ImageViewer extends PureComponent {
 	render() {
 		return (
-			<div className="ImageViewer">
-				<IPFSImageWrapper />
-			</div>
+			<Container>
+				  <IPFSImageWrapper />
+			</Container>
 		);
 	}
 }
