@@ -15,6 +15,7 @@ export const ChatContainer = styled(FullHeightColumnFlexSpaceBetweenDiv)`
 
 export const MessageContainer = styled.div`
   height: 90%;
+  overflow-y: auto;
 `
 
 export const InputContainer = styled.div`

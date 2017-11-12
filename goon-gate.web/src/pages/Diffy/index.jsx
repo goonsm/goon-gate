@@ -3,9 +3,9 @@ import styled from 'styled-components';
 
 import ImageUploader from "sections/ImageUploader";
 
-import {NoScrollPage} from 'utils/Layout';
+import {LongPage} from 'utils/Layout';
 
-const Container = styled(NoScrollPage)`
+const Container = styled(LongPage)`
 
 `
 
