@@ -20,4 +20,7 @@ export const MessageContainer = styled.div`
 
 export const InputContainer = styled.div`
   height: 9%;
+  input {
+    text-transform: none;
+  }
 `
