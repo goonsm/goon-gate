@@ -15,12 +15,6 @@ import {FlexRowDiv} from 'utils/Layout';
 
 import {SideBarContainer, ChatContainer, MessageContainer, InputContainer,} from './Layout';
 
-import creds from 'credentials.json';
-
-const {username, password, repo,} = creds.gitchat;
-
-const GitChatInstance = new gitchat(username, password, repo)
-
 const CHANNELS = new Array(7)
 	.fill(0)
 	.map((item, i) => `#Channel ${i}`);
@@ -37,20 +31,51 @@ export default class extends Component {
 	}
 
 	fetchMessages = async() => {
-		const {channel} = this.state;
+		if (!this.gitChatInstance) {
+			return;
+		}
+		try {
+			const {gitChatInstance} = this;
 
-		const messages = await GitChatInstance.getMessagesFromChannel(channel);
+  		const {channel} = this.state;
 
-		this.setState({messages});
+  		const messages = await gitChatInstance.getMessagesFromChannel(channel);
+
+  		this.setState({messages});
+		} catch (e) {
+			console.error(e);
+		}
 	}
 
 	componentWillMount() {
 		this.fetchMessages();
 	}
 
+  processCommand = async(message) => {
+  	const tokens = message.split(' ');
+  	switch (tokens[0]) {
+  	case '/login':
+  	default: {
+  		const [, username, password, repo] = tokens;
+  		this.gitChatInstance = new gitchat(username, password, repo);
+  		this.fetchMessages();
+  	}
+  	}
+  }
+
 	sendMessage = async(message) => {
+		// '/' means command
+		if (message[0] === '/') {
+			return this.processCommand(message);
+		}
+
+		if (!this.gitChatInstance) {
+			return;
+		}
+
 		try {
-			await GitChatInstance.sendChatMessage(this.state.branch, message);
+			const {gitChatInstance} = this;
+			await gitChatInstance.sendChatMessage(this.state.branch, message);
 
 			this.fetchMessages();
 		} catch (e) {
